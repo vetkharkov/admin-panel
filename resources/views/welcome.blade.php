@@ -82,17 +82,17 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <p>
+                        {{--@php--}}
+                        {{--dd(\App\Admin\Core\AdminApp::get_instance()->getProperty('pagination'));--}}
+                        {{--@endphp--}}
+                        {{--{{ dd($_ENV) }}--}}
+                        {{--{{ env('APP_KEY') }}--}}
+                    </p>
                 </div>
             </div>
         </div>
