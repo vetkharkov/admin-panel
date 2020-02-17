@@ -6,6 +6,10 @@
 Homestead.yaml
 Homestead.json
 
+# PHP STORM
+.phpstorm.meta.php
+_ide_helper.php
+
 # ====== OS X ===========================================
 .DS_Store
 .AppleDouble
