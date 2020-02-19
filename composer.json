@@ -18,6 +18,7 @@
     "barryvdh/laravel-ide-helper": "^2.6",
     "facade/ignition": "^1.4",
     "fzaninotto/faker": "^1.9.1",
+    "laravel/ui": "^1.2",
     "mockery/mockery": "^1.0",
     "nunomaduro/collision": "^3.0",
     "phpunit/phpunit": "^8.0"
@@ -43,6 +44,7 @@
     "classmap": [
       "database/seeds",
       "database/factories",
+      "app/Models",
       "app/Admin/Core"
     ]
   },
