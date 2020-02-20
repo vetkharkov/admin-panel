@@ -21,11 +21,15 @@ Route::group(['midleware' => ['auth', 'status']], function () {
 
     Route::group($groupData, function () {
         Route::resource('index', 'MainController')->names('adminzone.admin.index');
+//        Route::resource('users', 'UserController')->names('adminzone.admin.users');
+
+
+
+
+
     });
 
 
-
-
-
-
 });
+
+Route::get('/user/index', 'AdminZone\User\MainController@index');
