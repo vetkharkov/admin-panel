@@ -33,7 +33,7 @@
                             <span class="label label-success">
                                 @if($order->status == 0) Новый @endif
                                 @if($order->status == 1) Завершен @endif
-                                @if($order->status == 2) Удалён @endif
+                                @if($order->status == 2) <b class="label label-danger">Удалён</b> @endif
                             </span>
                         </td>
                         <td>
@@ -46,6 +46,10 @@
                 </tbody>
 
             </table>
+
+            <div class="box-footer clearfix">
+                <a href="{{ route('adminzone.admin.orders.index') }}" class="btn btn-sm btn-info btn-flat pull-left">Все заказы</a>
+            </div>
         </div>
     </div>
 </div>
