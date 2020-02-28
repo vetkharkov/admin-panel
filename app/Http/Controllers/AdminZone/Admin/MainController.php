@@ -24,7 +24,7 @@ class MainController extends AdminBaseController
     public function index()
     {
 
-        $last_orders = $this->orderRepository->getAllOrders(6);
+        $last_orders = $this->orderRepository->getAllOrders(5);
         $last_products = $this->productRepository->getLastProducts(3);
 
 

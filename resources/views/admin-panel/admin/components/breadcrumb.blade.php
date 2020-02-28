@@ -14,7 +14,7 @@
 
     @if(isset($order))
         <li>
-            <a href="">{{ $order }}</a>
+            <a href="{{route('adminzone.admin.orders.index')}}">{{ $order }}</a>
         </li>
     @endif
 
