@@ -8,10 +8,10 @@ use App\Models\Admin\Product as Model;
 
 class ProductRepository extends CoreRepository
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
+//    public function __construct()
+//    {
+//        parent::__construct();
+//    }
 
     protected function getModelClass()
     {
