@@ -38,7 +38,6 @@ abstract class CoreRepository
         if (!$id) {
             throw new \Exception('Проверь id', 404);
         }
-
         return $id;
     }
 
