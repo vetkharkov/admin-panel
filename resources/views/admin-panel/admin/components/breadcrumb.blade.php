@@ -20,7 +20,7 @@
 
     @if(isset($category))
         <li>
-            <a href="">{{ $category }}</a>
+            <a href="{{route('adminzone.admin.categories.index')}}">{{ $category }}</a>
         </li>
     @endif
 

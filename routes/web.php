@@ -29,8 +29,10 @@ Route::group(['midleware' => ['auth', 'status']], function () {
         Route::post('/orders/save/{id}', 'OrderController@save')->name('adminzone.admin.orders.save');
         Route::get('/orders/forcedestroy/{id}', 'OrderController@forcedestroy')->name('adminzone.admin.orders.forcedestroy');
 
-        /**   */
+        /**  Menu Category */
 
+        Route::get('/categories/mydel', 'CategoryController@myDel')->name('adminzone.admin.categories.mydel');
+        Route::resource('categories', 'CategoryController')->names('adminzone.admin.categories');
 
 
 
