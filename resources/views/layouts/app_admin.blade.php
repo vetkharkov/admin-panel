@@ -139,8 +139,8 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="">Список пользователей</a></li>
-                        <li><a href="">Добавить пользователя</a></li>
+                        <li><a href="{{ route('adminzone.admin.users.index') }}">Список пользователей</a></li>
+                        <li><a href="{{ route('adminzone.admin.users.create') }}">Добавить пользователя</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

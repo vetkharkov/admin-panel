@@ -26,7 +26,7 @@
 
     @if(isset($user))
         <li>
-            <a href="">{{ $user }}</a>
+            <a href="{{route('adminzone.admin.users.index')}}">{{ $user }}</a>
         </li>
     @endif
 
