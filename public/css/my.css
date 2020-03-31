@@ -46,6 +46,18 @@
     color: #fff;
 }
 
-.wrapper{
+.wrapper {
     overflow:hidden;
+}
+
+.overlay {
+    display: none;
+}
+
+.del-items {
+    margin: 5px;
+    padding: 5px;
+    max-width:150px;
+    max-height: 150px;
+    cursor: pointer;
 }

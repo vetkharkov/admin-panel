@@ -20,12 +20,11 @@
                         @if(!empty($product->img))
                             <img src="{{ asset('uploads/single/' . $product->img) }}" alt="image">
                         @else
-                            <img src="{{ asset('images/no_image.png') }}" alt="no-image">
+                            <img src="{{ asset('images/no_images.png') }}" alt="no-image">
                         @endif
                     </div>
                     <div class="product-info">
-                        {{--<a href="{{ route('adminzone.admin.products.edit', $product->id) }}" class="product-title">--}}
-                        <a href="" class="product-title">
+                        <a href="{{ route('adminzone.admin.products.edit', $product->id) }}" class="product-title">
                             {{ $product->title }}
                             <span class="label label-warning pull-right">{{ $product->price }} грн.</span>
                         </a>
@@ -36,6 +35,6 @@
         </ul>
     </div>
     <div class="box-footer clearfix">
-        <a href="" class="btn btn-sm btn-info btn-flat pull-left">Все продукты</a>
+        <a href="{{ route('adminzone.admin.products.index') }}" class="btn btn-sm btn-info btn-flat pull-left">Все продукты</a>
     </div>
 </div>
