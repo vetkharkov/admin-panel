@@ -1,5 +1,10 @@
 <?php
 
+Route::get('/test', function () {
+//    ini_set('post_max_size', '10M');
+//    ini_set('upload_max_filesize', '10M');
+    phpinfo();
+});
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,28 +21,30 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['midleware' => ['auth', 'status']], function () {
     $groupData = [
         'namespace' => 'AdminZone\Admin',
-        'prefix'    => 'admin',
+        'prefix' => 'admin',
     ];
 
     Route::group($groupData, function () {
 
-        Route::resource('index', 'MainController')->names('adminzone.admin.index');
+        /**  Main menu */
+
+        require_once 'my-routes/admin/main_index.php';
 
         /**  Orders */
-        Route::resource('orders', 'OrderController')->names('adminzone.admin.orders');
-        Route::get('/orders/change/{id}', 'OrderController@change')->name('adminzone.admin.orders.change');
-        Route::post('/orders/save/{id}', 'OrderController@save')->name('adminzone.admin.orders.save');
-        Route::get('/orders/forcedestroy/{id}', 'OrderController@forcedestroy')->name('adminzone.admin.orders.forcedestroy');
+
+        require_once 'my-routes/admin/orders.php';
 
         /**  Menu Category */
 
-        Route::get('/categories/mydel', 'CategoryController@myDel')->name('adminzone.admin.categories.mydel');
-        Route::resource('categories', 'CategoryController')->names('adminzone.admin.categories');
+        require_once 'my-routes/admin/menu_categories.php';
 
         /**  Users */
 
-        Route::resource('users', 'UserController')->names('adminzone.admin.users');
+        require_once 'my-routes/admin/users.php';
 
+        /**  Products */
+
+        require_once 'my-routes/admin/products.php';
 
 
     });

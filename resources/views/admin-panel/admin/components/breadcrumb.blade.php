@@ -32,7 +32,7 @@
 
     @if(isset($product))
         <li>
-            <a href="">{{ $product }}</a>
+            <a href="{{route('adminzone.admin.products.index')}}">{{ $product }}</a>
         </li>
     @endif
 
