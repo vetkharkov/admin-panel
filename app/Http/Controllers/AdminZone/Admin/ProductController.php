@@ -35,9 +35,6 @@ class ProductController extends AdminBaseController
         $getAllProducts = $this->productRepository->getAllProducts($perPage);
         $count = $this->productRepository->getCountProducts();
 
-//        Session::flush();
-//        dd($getAllProducts);
-
         MetaTag::setTags(['title' => "Список товаров"]);
 
         return view('admin-panel.admin.product.index', compact('getAllProducts', 'count'));

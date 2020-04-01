@@ -38,13 +38,13 @@
 
     @if(isset($group_filter))
         <li>
-            <a href="">{{ $group_filter }}</a>
+            <a href="{{route('adminzone.admin.filters.group-filter')}}">{{ $group_filter }}</a>
         </li>
     @endif
 
     @if(isset($attrs_filter))
         <li>
-            <a href="">{{ $attrs_filter }}</a>
+            <a href="{{route('adminzone.admin.filters.attributes-filter')}}">{{ $attrs_filter }}</a>
         </li>
     @endif
 
