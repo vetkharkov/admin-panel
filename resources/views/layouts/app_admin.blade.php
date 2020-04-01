@@ -163,8 +163,8 @@
 </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="#">Группы фильтров</a></li>
-                        <li><a href="#">Фильтры</a></li>
+                        <li><a href="{{ route('adminzone.admin.filters.group-filter') }}">Группы фильтров</a></li>
+                        <li><a href="{{ route('adminzone.admin.filters.attributes-filter') }}">Фильтры</a></li>
                     </ul>
                 </li>
             </ul>

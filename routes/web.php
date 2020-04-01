@@ -46,6 +46,10 @@ Route::group(['midleware' => ['auth', 'status']], function () {
 
         require_once 'my-routes/admin/products.php';
 
+        /**  Filters */
+
+        require_once 'my-routes/admin/filters.php';
+
 
     });
 
