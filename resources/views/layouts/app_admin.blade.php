@@ -10,6 +10,8 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{asset('adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <!-- Связаные товары select -->
+    <link rel="stylesheet" href="{{asset('adminlte/bower_components/select2/dist/css/select2.css')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{asset('adminlte/bower_components/font-awesome/css/font-awesome.min.css')}}">
     <!-- Ionicons -->
@@ -23,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('css/my.css')}}">
 
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    {{--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">--}}
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -64,7 +66,7 @@
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="" class="btn btn-default btn-flat">Профиль</a>
+                                    <a href="{{ route('adminzone.admin.users.edit', Auth::user()->id) }}" class="btn btn-default btn-flat">Профиль</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -127,11 +129,11 @@
               </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="">Список товаров</a></li>
-                        <li><a href="">Добавить товар</a></li>
+                        <li><a href="{{ route('adminzone.admin.products.index') }}">Список товаров</a></li>
+                        <li><a href="{{ route('adminzone.admin.products.create') }}">Добавить товар</a></li>
                     </ul>
                 </li>
-                <li><a href=""><i class="fa fa-database"></i> <span>Кэширование</span></a></li>
+                <li><a href="#"><i class="fa fa-database"></i> <span>Кэширование</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-users"></i> <span>Пользователи</span>
                         <span class="pull-right-container">
@@ -150,8 +152,8 @@
 </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="">Список валют</a></li>
-                        <li><a href="">Добавить валюту</a></li>
+                        <li><a href="{{route('adminzone.admin.currency.index')}}">Список валют</a></li>
+                        <li><a href="{{route('adminzone.admin.currency.add')}}">Добавить валюту</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -161,15 +163,15 @@
 </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="">Группы фильтров</a></li>
-                        <li><a href="">Фильтры</a></li>
+                        <li><a href="{{ route('adminzone.admin.filters.group-filter') }}">Группы фильтров</a></li>
+                        <li><a href="{{ route('adminzone.admin.filters.attributes-filter') }}">Фильтры</a></li>
                     </ul>
                 </li>
             </ul>
 
             <!-- search form -->
 
-            <form action="" method="get" autocomplete="off"  style="position: absolute;">
+            <form action="{{ route('adminzone.admin.search.index') }}" method="get" autocomplete="off"  style="position: absolute;">
                 <div class="input-group">
                     <input id="search" name="search" type="text" class="form-control" placeholder="Живой поиск...." style="color: whitesmoke; background-color:#20262a; border: none;">
                     <span class="input-group-btn">
@@ -198,7 +200,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 3.0
         </div>
-        <strong>Copyright &copy; 2019  All rights reserved.</strong>
+        <strong>Copyright &copy; 2020  All rights reserved.</strong>
     </footer>
 
     <div class="control-sidebar-bg"></div>
@@ -214,6 +216,10 @@
 </script>
 <!-- jQuery 3 -->
 <script src="{{asset('adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- Typeahead.js Bundle -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+<!-- Ajax Upload -->
+<script src="{{asset('js/ajaxupload.js')}}"></script>
 
 <!-- Bootstrap 3.3.7 -->
 <script src="{{asset('adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
@@ -224,8 +230,23 @@
 <!-- AdminLTE App -->
 <script src="{{asset('adminlte/dist/js/adminlte.min.js')}}"></script>
 
+<!-- CKEditor -->
+<script type="text/javascript" src="{{ asset('adminlte/bower_components/ckeditor/ckeditor.js') }}"></script>
+<script type="text/javascript" src="{{ asset('adminlte/bower_components/ckeditor/adapters/jquery.js') }}"></script>
+
+<!-- Связаные товары select -->
+<script type="text/javascript" src="{{ asset('adminlte/bower_components/select2/dist/js/select2.full.js') }}"></script>
+
 <!-- My JS CODE  -->
 <script src="{{asset('js/my.js')}}"></script>
+
+@include('admin-panel.admin.product.include.script_img')
+
+@include('admin-panel.admin.product.include.script_gallery')
+
+@include('admin-panel.admin.product.include.script_related_product')
+
+@include('admin-panel.admin.search.include.search')
 
 </body>
 </html>
