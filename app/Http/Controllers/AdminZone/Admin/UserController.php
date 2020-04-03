@@ -28,8 +28,7 @@ class UserController extends AdminBaseController
      */
     public function index()
     {
-//        dd($this->userRepository);
-        $perPage =8;
+        $perPage =10;
         $countUsers = MainRepository::getCountUsers();
         $paginator = $this->userRepository->getAllUsers($perPage);
 
