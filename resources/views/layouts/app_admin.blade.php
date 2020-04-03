@@ -171,7 +171,7 @@
 
             <!-- search form -->
 
-            <form action="" method="get" autocomplete="off"  style="position: absolute;">
+            <form action="{{ route('adminzone.admin.search.index') }}" method="get" autocomplete="off"  style="position: absolute;">
                 <div class="input-group">
                     <input id="search" name="search" type="text" class="form-control" placeholder="Живой поиск...." style="color: whitesmoke; background-color:#20262a; border: none;">
                     <span class="input-group-btn">
@@ -200,7 +200,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 3.0
         </div>
-        <strong>Copyright &copy; 2019  All rights reserved.</strong>
+        <strong>Copyright &copy; 2020  All rights reserved.</strong>
     </footer>
 
     <div class="control-sidebar-bg"></div>
@@ -216,6 +216,8 @@
 </script>
 <!-- jQuery 3 -->
 <script src="{{asset('adminlte/bower_components/jquery/dist/jquery.min.js')}}"></script>
+<!-- Typeahead.js Bundle -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 <!-- Ajax Upload -->
 <script src="{{asset('js/ajaxupload.js')}}"></script>
 
@@ -239,8 +241,12 @@
 <script src="{{asset('js/my.js')}}"></script>
 
 @include('admin-panel.admin.product.include.script_img')
+
 @include('admin-panel.admin.product.include.script_gallery')
+
 @include('admin-panel.admin.product.include.script_related_product')
+
+@include('admin-panel.admin.search.include.search')
 
 </body>
 </html>
