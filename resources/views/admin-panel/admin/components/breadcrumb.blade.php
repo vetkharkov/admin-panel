@@ -50,7 +50,7 @@
 
     @if(isset($currency))
         <li>
-            <a href="">{{ $currency }}</a>
+            <a href="{{route('adminzone.admin.currency.index')}}">{{ $currency }}</a>
         </li>
     @endif
 

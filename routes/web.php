@@ -50,6 +50,13 @@ Route::group(['midleware' => ['auth', 'status']], function () {
 
         require_once 'my-routes/admin/filters.php';
 
+        /** Currency */
+
+        require_once 'my-routes/admin/currency.php';
+
+        /** AJAX Search */
+
+        require_once 'my-routes/admin/search.php';
 
     });
 
